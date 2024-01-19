@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Lecture 9| build Forms</title>
+
+</head>
+
+<body>
+    <div class="form">
+        <h1 class="head">Event Registration</h1>
+
+        <form action="">
+            <fieldset class="Basic">
+                <legend class="basic_info">Basic Informations</legend>
+                <label for="name">Name : </label>
+                <input type="text" name="" id="name">
+
+                <br><br>
+
+                <label for="Email">Email : </label>
+                <input type="text" name="" id="Email">
+
+                <br><br>
+
+                <label for="Phone">Phone : </label>
+                <input type="text" name="" id="Phone">
+
+                <br><br>
+
+                <div class="occupation">
+                    <label for="occupation">Occupation : </label>
+                    <select name="" id="occupation">
+                        <option value="Empty"></option>
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+            </fieldset>
+            
+            <br><br>
+
+            <fieldset class="topic">
+                <legend class="topics_interst">Topics intrest</legend>
+
+                <label for="html">HTML</label>
+                <input type="checkbox" name="" id="html">
+
+                <label for="css">CSS</label>
+                <input type="checkbox" name="" id="css">
+
+                <label for="js">Javascript</label>
+                <input type="checkbox" name="" id="js">
+
+            </fieldset>
+
+            <br><br>
+
+            <label class="comment" for="comment">Comments:</label>
+            <br>
+            <textarea name="" id="comment" cols="50" rows="8"></textarea>
+
+            <br><br>
+
+            <input type="submit" value="submit">
+
+    </div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color:white
+}
+
+.navcontainer{
+    min-height: 50px;
+    width: 100vw;
+    background: linear-gradient(to right, #336a3d, #89532f);
+}
+
+#navlist{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+#bookmarks{
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#webname{
+    width: 285px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffffe3;
+    text-shadow: 3px 3px 2px black;
+}
+
+.hodding{
+    height: 300px;
+    width: 700px;
+    margin: auto;
+    border: 2px solid black;
+    background-color: antiquewhite;
+    
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.fooddisplay{
+    margin: auto;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.foodimg{
+    height: 80px;
+    width: auto;
+    margin: 1px;
+    border-radius: 5%;
+    border: 2px solid black;
+    transition: all 0.8s ease;
+}
+
+.foodimg:hover{
+    height:150px;
+    width: auto;
+    border-radius: 20%;
+
+}
+
+.foodimg1 .overlay1{
+    color: black;
+    position: absolute;
+    display: flex;
+    flex-direction: row;    
+    justify-content: center;
+    align-items: center;
+
+}
+
+.fooddisplay .foodimg1 .overlay1 span{
+   
+    font-size: 20px;
+    opacity: 0%;
+    transition: all 0.5s ease;
+}
+
+.foodimg1:hover .overlay1 span{
+    opacity: 100%;
+
+}
+
+.foodimg2 .overlay2{
+    color: black;
+    position: absolute;
+    display: flex;
+    flex-direction: row;    
+    justify-content: center;
+    align-items: center;
+
+}
+
+.fooddisplay .foodimg2 .overlay2 span{
+   
+    font-size: 20px;
+    opacity: 0%;
+    transition: all 0.5s ease;
+}
+
+.foodimg2:hover .overlay2 span{
+    opacity: 100%;
+
+}
+.foodimg3 .overlay3{
+    color: black;
+    position: absolute;
+    display: flex;
+    flex-direction: row;    
+    justify-content: center;
+    align-items: center;
+
+}
+
+.fooddisplay .foodimg3 .overlay3 span{
+   
+    font-size: 20px;
+    opacity: 0%;
+    transition: all 0.5s ease;
+}
+
+.foodimg3:hover .overlay3 span{
+    opacity: 100%;
+
+}
+
+.foodimg4 .overlay4{
+    color: black;
+    position: absolute;
+    display: flex;
+    flex-direction: row;    
+    justify-content: center;
+    align-items: center;
+
+}
+
+.fooddisplay .foodimg4 .overlay4 span{
+   
+    font-size: 20px;
+    opacity: 0%;
+    transition: all 0.5s ease;
+}
+
+.foodimg4:hover .overlay4 span{
+    opacity: 100%;
+}
+
+.hodding .classics p{
+    margin-top: 10px;
+    position: relative;
+    left: 30px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.article{
+    display: block;
+    height: fit-content;
+    width: 500px;
+    padding: 10px;
+    background-color: rgba(128, 0, 128, 0.258);
+    margin-top: 50px;
+    position: relative;
+    left: 430px;
+}
+
+.sec_head h2{
+    margin-top:40px ;
+    margin-left: 10px;
+    letter-spacing: 0.8px;
+    color: #000000;
+    font-size: 30px;
+}
+
+.sec_head .influences{
+    height:400px;
+    width: 100vw;
+    /* background-color: #7d5a4234; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.sec_head .influences p{
+    margin-top:50px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 400px;
+    height: 320px;
+    overflow: auto;
+    background-color: #fbc96d90;
+}

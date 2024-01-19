@@ -1,0 +1,101 @@
+/* .box {
+  width: 150px;
+  height: 150px;
+  border: 2px solid green;
+  border-radius: 40px;
+  background: lightblue;
+  position: relative;
+}
+
+.shadow::before{
+  content:"";
+  position: absolute;
+  border-radius: 40px;
+  inset: -5px;
+  transform: translate(10px,8px);
+  z-index: -1;
+  background: conic-gradient(from 0deg at 40% -25%, purple, blue, skyblue,green, yellow, orange, red);
+  filter: blur(10px);
+} */
+
+/* ========================================================================================================== */
+
+.grid {
+  /* background-color: black; */
+  display: grid;
+  width: min(800px,100%); /* control the size here */
+  margin: 50px auto;
+  border: 2px solid black;
+  grid: repeat(2,1fr)/repeat(2,1fr); 
+  /* gap: 1rem; */
+  /* aspect-ratio: 2; */
+  padding: 10px;
+}
+
+.grid img{
+  border: 2px solid rgb(255, 255, 255);
+  height: 200px;
+  width: auto;
+  /* filter: grayscale(30%); */
+  transition: .3s;
+}
+
+
+.grid:hover img{
+  filter: grayscale();
+}
+.grid img:hover{
+  filter: grayscale(0%);
+}
+
+
+
+
+
+.gallery {
+  display: grid;
+  width: min(800px,100%); /* control the size here */
+  margin: 50px auto;
+  grid: repeat(2,1fr)/repeat(4,1fr); 
+  aspect-ratio: 2;
+}
+.gallery img {
+  width: 0;
+  height: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  filter: grayscale(30%);
+  transition: .3s;
+}
+.gallery:hover img {
+  filter: grayscale()
+}
+.gallery img:hover {
+  filter: grayscale(0%)
+}
+/* .gallery img:nth-child(1) {
+  grid-area: 1/1/span 2/span 2;
+  clip-path: polygon(0 0,100% 0,0 100%);
+}
+.gallery img:nth-child(2) {
+  grid-area: 1/2/span 2/span 2;
+  clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+}
+.gallery img:nth-child(3) {
+  grid-area: span 2/span 2/-1/-1;
+  clip-path: polygon(0 0,100% 0,100% 100%);
+}
+.gallery img:nth-child(4) {
+  grid-area: 2/1/span 1/span 2;
+  clip-path: polygon(50% 0,100% 100%,0 100%);
+}
+.gallery img:nth-child(5) {
+  grid-area: span 1/span 2/-1/-1;
+  clip-path: polygon(50% 0,100% 100%,0 100%);
+} */
+
+body {
+  background: #E3AAD6;
+}
