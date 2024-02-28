@@ -57,13 +57,22 @@ h1 {
 
 /* *********** Main ************************************************************************* */
 main {
+  /* width: 100%; */
   margin: 0.5rem auto;
-  padding: 1rem;
+  padding: 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 1.5rem;
-  /* border: 3px solid black; */
+  border: 3px solid black;
+}
+
+
+@media (min-width: 1600px){
+  main{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
 }
 
 .card {
