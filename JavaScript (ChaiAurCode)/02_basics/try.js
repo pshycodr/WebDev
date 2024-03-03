@@ -1,18 +1,35 @@
+// call backs
+
 function one(){
     console.log("one");
-    two()
+  
 }
 
 function two(){
     console.log("two")
-    three()
+    one()
 }
 
 function three(){
     console.log("three")
+    two()
 }
 
 
-one();
-two();
 three();
+
+
+// // Recursion
+// let i = 1;
+
+// function one(){
+//     console.log(`run = ${i}`);
+    
+//     i++
+//     if (i<=10){
+//         one();
+//     } 
+  
+// }
+
+// one();
