@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #212121;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    function CreateDiv(DivName, bgColor){
+        const div = document.createElement("div");
+        div.className = DivName;
+        div.id = Math.round(Math.random() * 10 + 1);
+        div.style.color = "#fff";
+        div.style.backgroundColor = bgColor;
+        div.style.padding = "10px";
+        div.style.border = "2px solid black";
+
+        // div.textContent = "Hello World";
+        const addText = document.createTextNode("Hello World")
+        div.appendChild(addText)
+
+        document.body.appendChild(div);
+    }
+
+    CreateDiv("div_1", "black");
+    CreateDiv("div_1", "green");
+    CreateDiv("div_1", "Brown");
+</script>
+</html>

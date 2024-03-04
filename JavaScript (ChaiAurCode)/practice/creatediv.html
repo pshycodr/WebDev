@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #212121;
+        }
+        button{
+            height: 20px;
+            width: 90px;
+            margin: 20px;
+        }
+
+        label{
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #divcontent{
+            height: 100px;
+            width: 200px;
+            margin: 50px;
+        }
+
+        #Divcolor, #divFontColor{
+            height: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+<label for="divcontent">Enter Div Content : </label>
+<input type="text" name="divcontent" id="divcontent">
+
+<label for="divFontColor">Enter Div font color : </label>
+<input type="color" name="divFontColor" id="divFontColor">
+
+<label for="Divcolor">Enter Div bg color : </label>
+<input type="color" name="Divcolor" id="Divcolor">
+
+<button onclick= "CreateDiv('div_1', document.getElementById('Divcolor').value, document.getElementById('divcontent').value, document.getElementById('divFontColor').value )">add div</button>
+<body>
+
+</body>
+<script>
+
+    function CreateDiv(DivName, bgColor, DivContent, divFontColor){
+        const div = document.createElement("div");
+        div.className = DivName;
+        div.id = Math.round(Math.random() * 10 + 1);
+        div.style.color = divFontColor;
+        div.style.backgroundColor = bgColor;
+        div.style.padding = "10px";
+        div.style.border = "2px solid black";
+
+        // div.textContent = "Hello World";
+        const addText = document.createTextNode(DivContent)
+        div.appendChild(addText)
+
+        document.body.appendChild(div);
+
+
+    }
+
+    CreateDiv("div_1", "black", "Hello World", "White");
+
+</script>
+</html>

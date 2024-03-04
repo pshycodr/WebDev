@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+.container {
+    text-align: center;
+}
+
+.clock {
+    font-size: 3em;
+    display: flex;
+}
+
+.time {
+    padding: 10px;
+    margin: 5px;
+}
+
+.divider {
+    padding: 10px;
+    margin: 5px;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="clock">
+            <div class="time" id="hours"></div>
+            <div class="divider">:</div>
+            <div class="time" id="minutes"></div>
+            <div class="divider">:</div>
+            <div class="time" id="seconds"></div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    function clock(){
+        const time = new Date()
+
+        const h = (time.getHours() < 10 ? "0" + time.getHours() : time.getHours())
+        const m = (time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes())
+        const s = (time.getSeconds() < 10 ? "0" + time.getSeconds() : time.getSeconds())
+
+
+
+        document.getElementById('hours').innerText = `${h}`
+        document.getElementById('minutes').innerText = `${m}`
+        document.getElementById('seconds').innerText = `${s}`
+    }
+
+    setInterval(clock)
+</script>
+
+</html>

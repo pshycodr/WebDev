@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background color changer</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+
+        #bg-color-changer{
+            height: 50px;
+            width: 100px;
+        }
+
+        button{
+            height: 20px;
+            width: 90px;
+            margin: 20px;
+        }
+
+        label{
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <label for="bg-color-changer">Choose your background color : </label>
+    <input type="color" name="bg-color-changer" id="bg-color-changer">
+    <button onclick=" bgColorChanger(document.getElementById('bg-color-changer').value)">set color</button>
+</body>
+<script>
+    function bgColorChanger(bgcolor) { 
+        const bg = document.querySelector("body")
+        bg.style.backgroundColor = `${bgcolor}`
+    }
+</script>
+</html>
