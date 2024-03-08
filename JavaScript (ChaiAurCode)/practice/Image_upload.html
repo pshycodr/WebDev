@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #upload-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        #profile-image {
+            max-width: 200px;
+            max-height: 200px;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div id="upload-card">
+    <div id="profile-image-container">
+        <img id="profile-image" src="#" alt="Profile Image">
+    </div>
+    
+    <input type="file" id="image-upload" accept="image/jpeg, .jpg, .png">
+    <label for="image-upload">Choose Image</label>
+</div>
+
+<script>
+
+    let profilePic = document.getElementById("profile-image")
+    let imgInput = document.getElementById("image-upload")
+
+    imgInput.onchange = function(){
+        profilePic.src = URL.createObjectURL(imgInput.files[0])
+    }
+
+
+
+    // document.getElementById('image-upload').addEventListener('change', function (e) {
+    //     var file = e.target.files[0];
+    //     var reader = new FileReader();
+
+    //     reader.onload = function (event) {
+    //         document.getElementById('profile-image').src = event.target.result;
+    //     };
+
+    //     reader.readAsDataURL(file);
+    // });
+
+
+</script>
+
+</body>
+</html>
