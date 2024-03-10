@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <h1>
+        This is Heading
+    </h1>
+    <button>Stop</button>
+
+    <script>
+        const heading = () => {
+            document.querySelector('h1').innerText = "Changed Heading"
+        }
+
+        const changedHeading = setTimeout(heading, 3000)
+
+        document.querySelector('button').addEventListener('click', () => {
+            clearTimeout(changedHeading)
+        })
+
+    </script>
+</body>
+</html>

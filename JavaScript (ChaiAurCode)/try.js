@@ -1,7 +1,14 @@
-const time = new Date()
+async function quizData(){
+    let url = "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple"
 
-const hours = time.getHours()
-const min = time.getMinutes()
-const sec = time.getSeconds()
+    let response = await fetch(url)
+    let data = await response.json()
 
-console.log(`${hours} : ${min} : ${sec}`);
+    let i = 0
+    
+    console.log(data.results[i].question);
+    
+    i += 1
+}
+
+quizData()

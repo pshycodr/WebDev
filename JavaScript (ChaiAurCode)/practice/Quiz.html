@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        #quiz-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #question {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .option {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            padding: 10px;
+            background-color: #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"]:checked+label {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="quiz-container">
+        <h1>Quiz Time!</h1>
+        <div id="question">Question goes here...</div>
+        <ul class="options">
+            <li class="option">
+                <input type="radio" name="answer" id="option1">
+                <label for="option1">Option 1</label>
+            </li>
+            <li class="option">
+                <input type="radio" name="answer" id="option2">
+                <label for="option2">Option 2</label>
+            </li>
+            <li class="option">
+                <input type="radio" name="answer" id="option3">
+                <label for="option3">Option 3</label>
+            </li>
+            <li class="option">
+                <input type="radio" name="answer" id="option4">
+                <label for="option4">Option 4</label>
+            </li>
+        </ul>
+        <button id="submit">Submit</button>
+        <button id="Next">Next</button>
+    </div>
+
+    <script>
+
+        // Quiz API = https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple
+
+    </script>
+
+</body>
+
+</html>
