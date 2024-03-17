@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github User Card</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .card {
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 500px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 50%;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card-content h2 {
+            margin-top: 0;
+            color: #3498db;
+            font-size: 1.5em;
+        }
+
+        .card-content p {
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .card-content a {
+            text-decoration: none;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .bio {
+            color: #777;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+
+        const body = document.querySelector('body')
+
+        const requestURL = "https://api.github.com/users/hiteshchoudhary"
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestURL)
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState)
+            if (xhr.readyState === 4) {
+                let data = JSON.parse(this.responseText)
+                console.log(data)
+                body.innerHTML = `
+                <div class="card">
+                <img src="${data.avatar_url}" alt="GitHub User Avatar">
+                <div class="card-content">
+                <h2>${data.name}</h2>
+                <p><strong>Location:</strong> ${data.location}</p>
+                <p><strong>Followers:</strong> ${data.followers}</p>
+                <p><strong>Following:</strong> ${data.following}</p>
+                <p class="bio">"${data.bio}"</p>
+                <p><strong> <a href="${data.html_url}">github</a></strong></p>
+            </div>
+                `
+            }
+        }
+        xhr.send()
+
+    </script>
+</body>
+
+</html>

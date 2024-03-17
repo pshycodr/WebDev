@@ -1,6 +1,6 @@
 import requests
 
-url = "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple"
+url = "https://opentdb.com/api.php?amount=10&category=28&difficulty=easy&type=multiple"
 
 response = requests.get(url)
 data = response.json()

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <style>
+        table{
+        border: 2px solid black;
+        width: 500px;
+        }
+
+        th,td{
+        border: 2px solid black;
+    }
+    </style>
+</head>
+<body style="background-color: #212121; color: whitesmoke;">
+
+    <h1>Key Press</h1>
+        <div class="insertTable"></div>
+    
+    <script>
+        window.addEventListener('keydown', (e) => {
+            const Keytable = document.querySelector(".insertTable")
+
+            Keytable.innerHTML = `
+            <table>
+                <tr >
+                    <th>Key Name</th>
+                    <th>key Code</th>
+                    <th>code</th>
+                </tr>
+                <tr>
+                    <td>${e.key === " " ? "space" : e.key}</td>
+                    <td>${e.keyCode}</td>
+                    <td>${e.code}</td>
+                </tr>
+
+            </table>
+            `
+
+            
+        })
+    </script>
+    
+</body>
+</html>
