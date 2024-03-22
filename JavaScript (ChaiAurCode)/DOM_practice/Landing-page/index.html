@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Headland+One&family=Noto+Sans:wdth,wght@93.8,750;100,537;100,767&family=Open+Sans:ital,wght@0,307;1,400&family=Roboto:wght@300&family=Rubik:wght@399&display=swap"
+        rel="stylesheet">
+    <title>Landing Page</title>
+</head>
+
+<body>
+    <div class="navbar_continer">
+        <div class="navbar_name">
+            <h1>
+                Hospital
+            </h1>
+        </div>
+
+        <div class="nav_navigations">
+
+            <ul>
+                <li>Home</li>
+                <li>Blog</li>
+                <li>FAQ</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+
+        <div class="nav_appointment_button">
+            <button>Book Appintment</button>
+        </div>
+
+    </div>
+
+
+    <div class="corousel_container">
+
+        <div class="corousel_img">
+            <img src="surgery-1822458-01.jpeg" alt="">
+        </div>
+
+        <div class="corusel_textbox">
+            <div class="corusel_heading">
+                <p>
+                    Take care your health now
+                </p>
+            </div>
+
+            <div class="corusel_text">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque quasi, iusto rem quaerat
+                    ducimus ratione? Nemo iure quae possimus dolorum consequuntur expedita atque!
+                </p>
+            </div>
+
+            <div class="corusel_buttons">
+                <button class="appointment_button">
+                    Book Appointment
+                </button>
+
+                <button class="learn_more_button">
+                    Learn More
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="online_consult_container">
+        <div class="online_consult_form">
+            <form action="">
+                <label for="patient_name">
+                    <input type="text" name="patient_name" id="patient_name" placeholder="Your Name">
+                </label>
+
+                <label for="patient_email">
+                    <input type="text" name="patient_email" id="patient_email" placeholder="Your Email">
+                </label>
+
+                <label for="patient_problem">
+                    <input type="text" name="patient_problem" id="problem" placeholder="Describe Your Problem">
+                </label>
+
+                <button type="submit">Get Online Consultation</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to check if an element is in the viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Function to add animation class when element is in viewport
+        function activateAnimation() {
+            const onlineConsultContainer = document.querySelector(".online_consult_container");
+            if (isInViewport(onlineConsultContainer)) {
+                onlineConsultContainer.classList.add("active");
+                // Remove the scroll listener to avoid multiple activations
+                window.removeEventListener('scroll', activateAnimation);
+            }
+        }
+
+        // Add scroll event listener to activate animation
+        window.addEventListener('scroll', activateAnimation);
+
+        // Call the function initially in case the element is already in viewport
+        activateAnimation();
+    </script>
+
+    <div class="opening_info_container">
+
+        <div class="opening_info_img">
+            <img src="Picsart_24-02-13_00-35-26-533.jpg" alt="">
+        </div>
+        <div class="opening_info">
+            <div class="opening_info_heading">
+                <p>
+                    Opening Hours
+                </p>
+            </div>
+
+            <div class="opening_info_chart">
+                <table>
+                    <tr>
+                        <td>Monday</td>
+                        <td></td>
+                        <td>8am - 11pm</td>
+
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td></td>
+                        <td>8am - 11pm</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td></td>
+                        <td>8am - 11pm</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td></td>
+                        <td>8am - 11pm</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td></td>
+                        <td>8am - 10pm</td>
+                    </tr>
+                    <tr>
+                        <td>Sat/Sunday</td>
+                        <td></td>
+                        <td>9am - 10pm</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="members_container">
+        <div class="members_container_heading">
+            <p>
+                Our Members
+            </p>
+        </div>
+    
+        <div class="members_info">
+            <div class="nurse_container">
+                <h2>Nursing Team</h2>
+                <p>Our dedicated nursing team provides compassionate care to our patients. They are highly trained professionals who ensure the well-being and comfort of every individual under their care.</p>
+                <button>
+                    Meet our Nurses
+                </button>
+            </div>
+    
+            <div class="doctor_container">
+                <h2>Medical Doctors</h2>
+                <p>Meet our team of experienced and skilled medical doctors. They are committed to delivering the highest quality medical care and are passionate about improving the health and lives of our patients.</p>
+                <button>
+                    Meet our Doctors
+                </button>
+            </div>
+    
+            <div class="stafs_container">
+                <h2>Support Staff</h2>
+                <p>Behind the scenes, our support staff plays a crucial role in ensuring the smooth operation of our healthcare facility. From administrative tasks to maintaining a clean and welcoming environment, our staff is dedicated to providing a positive experience for everyone.</p>
+                <button>
+                    Meet our Supporting Stafs
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="emergency_num_container">
+        <div class="emergency_info">
+            <p class="emergency_text">Emergency Service line</p>
+            <p class="emergency_nums">0805 000 0000, 0806 000 0000</p>
+        </div>
+        <img src="emergency_line.jpg" alt="">
+    </div>
+
+</body>
+
+</html>

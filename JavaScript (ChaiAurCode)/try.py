@@ -11,7 +11,7 @@ allQuestions = data["results"]
 
 score = 0
 
-for question in  range(0, len(allQuestions)):
+for question in range(0, len(allQuestions)):
     print(f"--->> {allQuestions[question]["question"]}")
     correctAns =  allQuestions[question]["correct_answer"]
     incorect_ans = allQuestions[question]["incorrect_answers"]
