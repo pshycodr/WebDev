@@ -1,0 +1,174 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #ba4949;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container{
+    height: fit-content;
+    width: auto;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+}
+
+.TimerSection{
+    height: 300px;
+    width: 500px;
+    background-color: #c15c5c;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.TSnav{
+    width: 100%;
+    height: fit-content;
+    margin: 5px;
+    padding: 8px;
+    color: aliceblue;
+    font-family: "Tauri", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
+.TSnav > div{
+    cursor: pointer;
+}
+
+.TSnav > .settings-icon{
+    justify-self: right;
+}
+.TSnav > .settings-icon:hover{
+    color:#000000;
+}
+
+.TStimer{
+    font-size: 100px;
+    color: whitesmoke;
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.TSstartButton{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.TSstartButton > button{
+    width: 200px;
+    height: 50px;
+    margin-bottom: 13px;
+    border-radius: 5px;
+    border: none;
+
+    color: #ba4949;
+    font-family: "Tauri", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 25px;
+    cursor: pointer;
+
+}
+
+.countDodown-end-button{
+    display: none;
+}
+
+.TodoSection{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.todoHeading{
+    align-self:baseline;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 13px;
+    color: whitesmoke;
+    font-size: 25px;
+}
+
+.AllTodo{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.AllTodo > ul {
+    list-style: none ;
+    width: 500px;
+}
+
+.AllTodo > ul > li{
+    width: 100%;
+    border-left: 4px solid black;
+    border-radius: 5px;
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    background-color: #fff;
+
+}
+
+.todoInputButton > button{
+    width: 400px;
+    height: 50px;
+    border: 2px dashed #ca8d8d;
+    background-color: #c15c5c;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+
+
+    font-family: "Concert One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: aliceblue;
+    font-size: larger;
+    opacity: 60%;
+}
+
+.todoInputButton > button:hover{
+    opacity: 80%;
+}
+

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=M+PLUS+Rounded+1c&family=Tauri&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="focus_sec.css">
+    <link rel="stylesheet" href="short_sec.css">
+    <link rel="stylesheet" href="long_sec.css">
+
+    <title>Timer With Todo</title>
+</head>
+<body>
+    
+    <!-- Timer Section -->
+    <div class="container">
+        <div class="TimerSection">
+            <div class="TSnav">
+                <div class="focus">Focus</div>
+                <div class="Short-break">Short Brake</div>
+                <div class="long-break">Long Break</div>
+                <div class="settings-icon">
+                    <i style="font-size:20px" class="fa">&#xf013;</i>
+                </div>
+                
+            </div>
+            <div class="TStimer">
+                01:12
+            </div>
+            <div class="TSstartButton">
+                <button class="countDodown-start-button">Start</button>
+                <button class="countDodown-end-button">End</button>
+            </div>
+        </div>
+            
+
+        <!-- TODO section -->
+        <div class="TodoSection">
+            <div class="todoHeading">
+                <p>Tasks</p>
+                <hr>
+            </div>
+            <div class="AllTodo">
+                <ul>
+                  <li>
+                    <input type="checkbox" id="task1">
+                    <label for="task1">Task 1</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="task2">
+                    <label for="task2">Lorem ipsum dolor sit amet.</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="task3">
+                    <label for="task3">Task 3</label>
+                  </li>
+                </ul>
+              </div>
+            <div class="todoInput"></div>
+            <div class="todoInputButton">
+                <button>
+                    ➕ Add Task
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script>
+    const countDownTimer = document.querySelector(".TStimer")
+    const countDownStartButton = document.querySelector(".countDodown-start-button")
+    const TimerButtonDiv = document.querySelector(".TSstartButton")
+    const TimerEndButton = document.querySelector(".countDodown-end-button")
+    const changeTimer = document.querySelector(".settings-icon")
+    
+    let timer
+
+    function countDownStart(min, sec){
+
+        if(min || sec){
+            min = Number(min)
+            sec = Number(sec)
+        }else{
+            min = 1, sec = 12
+            
+            TimerEndButton.style.display = "inline"
+        }
+        
+        countDownStartButton.textContent = "Pause"
+        timer = setInterval(() => {
+            countDownTimer.textContent = `${min < 10 ? "0" + min : min}:${sec < 10 ? "0" + sec : sec}`
+
+            if(sec == 0 && min >= 0){
+                sec = 59
+                min --;
+            }else if(min < 0 ){
+                clearInterval(timer)
+                countDownStartButton.textContent = "Start"
+                countDownTimer.innerHTML = `00:00`
+            }else{
+                sec--
+            }
+        }, 1000) 
+    }
+
+    function countDownPause(timer){
+        clearInterval(timer)
+        countDownStartButton.textContent = "Restart"
+    }
+
+    function countDownRestart(CurrentTimer){
+        this.CurrentTimer = CurrentTimer
+        let [min, sec] = this.CurrentTimer.split(":").map(Number)
+        console.log(sec);
+        console.log(min);
+        countDownStart(min, sec)
+    }
+
+    function countDodownEnd(){
+        clearInterval(timer)
+        countDownStartButton.textContent = "Start"
+        TimerEndButton.style.display = "none"
+        countDownTimer.textContent = "00:00"
+        
+    }
+
+    countDownStartButton.addEventListener('click', function() {
+        if (countDownStartButton.textContent == "Start") {
+            countDownStart()
+
+        } else if(countDownStartButton.textContent == "Pause"){
+            countDownPause(timer)
+
+        }else if(countDownStartButton.textContent == "Restart"){
+            let CurrentTimer = countDownTimer.textContent
+            countDownRestart(CurrentTimer)
+        }
+
+    })
+
+    TimerEndButton.addEventListener('click', countDodownEnd)
+
+    
+
+</script>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            grid-gap: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #444;
+            border-radius: 10%;
+            font-size: 2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cell:hover {
+            background-color: #555;
+        }
+
+        .reset-button {
+            background-color: #af4c4c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .reset-button:hover {
+            background-color: #a04545;
+        }
+
+        .scoreBoard-container{
+            height: 100vh;
+            width: 100vw;
+            z-index: 100;
+            position: absolute;
+            background-color: #1e1e1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1;
+        }
+
+        .score-board{
+            height: 300px;
+            width: 400px;
+            background-color: #fff;
+            border: 5px solid rgba(0, 0, 0, 0.711);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+        }
+
+        .scoreBoard-reset-button{
+            width: 100px;
+            align-self: center;
+        }
+        
+        .score-board > h3{
+            color: #fc5757;
+            font-size: 30px;
+            align-self: center;
+        }
+
+        .score-board > p{
+            color: #1e1e1e;
+            font-size: 25px;
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <div class="board">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+
+        <button class="reset-button" >Restart</button>
+
+    </div>
+
+    <div class="scoreBoard-container">
+
+    </div>
+
+</body>
+<script>
+const cells = document.querySelectorAll(".cell");
+const resetButton = document.querySelector(".reset-button");
+const scoreBoard = document.querySelector(".scoreBoard-container");
+
+let winner = null;
+let currentPlayer = "X";
+
+function checkWinner() {
+    const winningPatterns = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [2, 4, 6],
+        [0, 4, 8]
+    ];
+    for (const pattern of winningPatterns) {
+        const [a, b, c] = pattern;
+        if ((cells[a].textContent) && (cells[a].textContent === cells[b].textContent) && (cells[a].textContent === cells[c].textContent)) {
+            cells[a].style.backgroundColor = cells[b].style.backgroundColor = cells[c].style.backgroundColor = "#4CAF50";
+            winner = currentPlayer;
+            return true;
+        }
+    }
+    return false;
+}
+
+function handelCellClick(event) {
+    const cell = event.target;
+    if (cell.textContent || winner) return;
+
+    cell.textContent = currentPlayer;
+
+    if (checkWinner()) {
+        setTimeout(() => {
+            scoreBoard.innerHTML = `
+                <div class="score-board">
+                    <h3>Result</h3>
+                    <p><b>${currentPlayer}</b> Wins the game🎉🎉🎉</p>
+                    <button class="scoreBoard-reset-button reset-button">Restart</button>
+                </div>
+            `;
+            scoreBoard.style.zIndex = "1";
+            scoreBoard.style.backgroundColor = "#ffffff68";
+
+            // Now add event listener to the newly created reset button
+            const scoreBoardResetButton = document.querySelector(".scoreBoard-reset-button");
+            scoreBoardResetButton.addEventListener('click', handelResetButton);
+        }, 500);
+        return;
+    }
+
+    if ([...cells].every(cell => cell.textContent)) {
+            setTimeout(() => {
+            scoreBoard.innerHTML = `
+                <div class="score-board">
+                    <h3>Result</h3>
+                    <p><b>It's a tie!!!</b></p>
+                    <button class="scoreBoard-reset-button reset-button">Restart</button>
+                </div>
+            `;
+            scoreBoard.style.zIndex = "1";
+            scoreBoard.style.backgroundColor = "#ffffff68";
+
+            // Now add event listener to the newly created reset button
+            const scoreBoardResetButton = document.querySelector(".scoreBoard-reset-button");
+            scoreBoardResetButton.addEventListener('click', handelResetButton);
+        })
+        return;
+    }
+
+    currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
+}
+
+function handelResetButton() {
+    cells.forEach(cell => {
+        cell.textContent = '';
+        cell.style.backgroundColor = '#444';
+    });
+
+    winner = null;
+    currentPlayer = 'X';
+    scoreBoard.innerHTML = null
+    scoreBoard.style.zIndex = "-1";
+    scoreBoard.style.backgroundColor = "#1e1e1e";
+}
+
+cells.forEach(cell => cell.addEventListener('click', handelCellClick));
+resetButton.addEventListener('click', handelResetButton);
+
+
+</script>
+</html>

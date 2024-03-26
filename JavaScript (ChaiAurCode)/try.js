@@ -1,14 +1,15 @@
-async function quizData(){
-    let url = "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple"
+let h = 0, m = 1, s = 60;
 
-    let response = await fetch(url)
-    let data = await response.json()
+const timer = setInterval(() => {
+    console.log(`${m} : ${s}`);
+    s--; 
 
-    let i = 0
-    
-    console.log(data.results[i].question);
-    
-    i += 1
-}
+    if(s === 0 && m >= 0){
+        m--;
+        s = 60
+    }
 
-quizData()
+    if(m < 0){
+        clearInterval(timer)
+    }
+}, 1000)

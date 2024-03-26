@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e; /* Dark background color */
+  color: #fff; /* Text color */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Adjusted to place TimerSection on top and TodoSection on bottom */
+  height: 100vh;
+}
+
+.TimerSection, .TodoSection {
+  background-color: #2e2e2e; /* Darker background color */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.TodoSection {
+  margin-top: 20px; /* Adjusted margin-top to create space between TimerSection and TodoSection */
+}
+
+.TSnav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.TSnav div {
+  cursor: pointer;
+}
+
+.TStimer {
+  font-size: 64px; /* Bigger font size for timer */
+  font-weight: bold;
+  color: #007bff; /* Blue color for timer */
+  margin-bottom: 20px;
+  margin-top: 10px; /* Adjusted margin-top to center the timer */
+}
+
+.TSstartButton button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.TSstartButton button:hover {
+  background-color: #0056b3;
+}
+
+.todoHeading {
+  margin-bottom: 20px;
+}
+
+.todoHeading p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.AllTodo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.AllTodo li {
+  margin-bottom: 10px;
+}
+
+.AllTodo input[type="checkbox"] {
+  display: none;
+}
+
+.AllTodo label {
+  display: block;
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+  color: #fff; /* Text color for checkboxes */
+}
+
+.AllTodo label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #007bff;
+  border-radius: 3px;
+}
+
+.AllTodo input[type="checkbox"]:checked + label::before {
+  background-color: #007bff;
+}
+
+.todoInputButton button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todoInputButton button:hover {
+  background-color: #0056b3;
+}
+
+.todoInputSection {
+    margin-top: 20px;
+}
+
+.todoInputSection input[type="text"] {
+    width: 200px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.todoInputSection button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.todoInputSection button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+
+    <title>Timer With Todo</title>
+</head>
+<body>
+    
+    <!-- Timer Section -->
+    <div class="container">
+        <div class="TimerSection">
+            <div class="TSnav">
+                <div class="focus">Focus</div>
+                <div class="Short-break">Short Brake</div>
+                <div class="long-break">Long Break</div>
+            </div>
+            <div class="TStimer">
+                25:00
+            </div>
+            <div class="TSstartButton">
+                <button>Start</button>
+            </div>
+        </div>
+
+
+        <!-- TODO section -->
+        <div class="TodoSection">
+            <div class="todoHeading">
+                <p>Tasks</p>
+                <hr>
+            </div>
+            <div class="AllTodo">
+                <ul>
+                  <li>
+                    <input type="checkbox" id="task1">
+                    <label for="task1">Task 1</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="task2">
+                    <label for="task2">Lorem ipsum dolor sit amet.</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="task3">
+                    <label for="task3">Task 3</label>
+                  </li>
+                </ul>
+              </div>
+            <div class="todoInput"></div>
+            <div class="todoInputButton">
+                <button id="showTodoInput">Add Task</button>
+            </div>
+            
+            
+            
+        </div>
+    </div>
+    
+</body>
+<script>
+   
+
+</script>
+</html>
