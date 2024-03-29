@@ -1,15 +1,34 @@
-let h = 0, m = 1, s = 60;
+// function* myGenerator(){
+//     yield function addNum(num1, num2) {
+//         return num1 + num2
+//     }
 
-const timer = setInterval(() => {
-    console.log(`${m} : ${s}`);
-    s--; 
+//     yield 2;
+//     yield 3;
+//     yield 4;
 
-    if(s === 0 && m >= 0){
-        m--;
-        s = 60
+// }
+
+// const gen = myGenerator()
+
+// while (true) {
+//     let done = gen.next()
+//     if(done.done == true) break;
+//     console.log(done);
+// }
+
+
+function* fibonacci() {
+    let prev = 0, curr = 1;
+    while (true) {
+        yield curr;
+        [prev, curr] = [curr, prev + curr];
     }
+}
 
-    if(m < 0){
-        clearInterval(timer)
-    }
-}, 1000)
+const fibonacciGenerator = fibonacci();
+
+// Print the first 10 Fibonacci numbers
+for (let i = 0; i < 10; i++) {
+    console.log(fibonacciGenerator.next().value);
+}
