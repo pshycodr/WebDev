@@ -239,8 +239,8 @@ body{
 .todoInputButton > button{
     width: 400px;
     height: 50px;
-    border: 2px dashed #ca8d8d;
-    background-color: #c15c5c;
+    border: 2px dashed #ca8d8db7;
+    background-color: #c15c5cab;
     border-radius: 5px;
     margin-top: 10px;
     cursor: pointer;
@@ -249,13 +249,15 @@ body{
     font-family: "Concert One", sans-serif;
     font-weight: 300;
     font-style: normal;
-    color: aliceblue;
+    color: rgba(240, 248, 255, 0.672);
     font-size: larger;
-    opacity: 60%;
 }
 
 .todoInputButton > button:hover{
-    opacity: 80%;
+    border: 2px dashed #ca8d8d;
+    background-color: #c15c5c;
+    color: aliceblue;
+
 }
 
 .todoInputContainer{
