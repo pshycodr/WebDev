@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav Try 1</title>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Hind", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+body{
+    background-color: rgb(224, 225, 225);
+    height: 1000px;
+}
+.material-symbols-outlined,.material-icons{
+    color: rgb(46, 118, 243);
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.navBody{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 3fr 10fr 3fr 3fr 3fr;
+    height: 70px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    transition: 0.5s ease;
+}
+.navEle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:40px;
+    overflow: hidden;
+}
+.logo{
+    overflow: hidden;
+    width: 160px;
+    height: 40p;
+    padding: 15px;
+
+}
+.logo_img{
+    width: 160px;
+    height: 40p;
+}
+.dot3{
+    font-size:30px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.serchBar-input{
+    border-style: none;
+    background-color: rgb(213, 229, 245);
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+}
+.navBody-button{
+    height: 90%;
+    padding-inline: 10px;
+    font-size: 20px;
+    color: black;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.profile-btn:hover{
+    background-color: rgb(246, 246, 246);
+    border: 1px solid rgb(174, 174, 174);
+    border-radius: 7px;
+}
+
+/* ------------------------ side nav --------------------- */
+
+.sideNav{
+    
+    width: 400px;
+    overflow: hidden;
+    position: absolute;
+    left: -50%;
+    background-color: rgb(255, 255, 255);
+    transition: 0.5s ease-in-out;
+    z-index: 1;
+
+}
+.sideNav > div{
+    margin: 2px ;
+    
+}
+.sideNav_opt{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.sideNav_opt > header{
+    font-weight: bold;
+    color: #878787;
+    font-size: 16px;
+    padding: 10px;
+}
+.sideNav_Singup_logo,.material-icons{
+    width: 43px;
+    height: 43px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.sideNav_Singup_close{
+    margin-left: 40px;
+}
+.sideNav_Singup_close>span{
+    color: black;
+    font-size: 30px;
+}
+.sideNav_order,header{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 10px;
+}
+.sideNav_Singup>a{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.sideNav_Singup_text{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+.sideNav_Singup_text>.a{
+    font-size: 12px;
+}
+.sideNav_Singup_text>.b{
+    font-size: 16px;
+}
+.sideNav_order>a{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.sideNav_order_text{
+    padding-left: 20px;
+    color: #878787;
+}
+.sideNav_opt>a{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-left: 40px;
+}
+.sideNav_opt>a:hover,.sideNav-opt>a:hover,.sideNav_order_text:hover{
+    color: rgb(46, 118, 243);
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="sideNav">
+        <div class="sideNav-opt sideNav_Singup">
+            <a href="#">
+                <div class="sideNav_Singup_logo"><i class="material-icons" style="color: black;">account_circle</i></div>
+                <div class="sideNav_Singup_text">
+                    <div class="a">Hello,</div>
+                    <div class="b">Sayan basani</div>
+                </div>
+                <div class="sideNav_Singup_close" onclick="closenav()" style="padding: 12px;"><span class="material-symbols-outlined" onclick="closenav()">close</span></div>
+            </a>
+        </div>
+        <div class="sideNav-opt sideNav_order">
+            <a href="#">
+                <i class="material-icons">shopping_cart</i>
+                <div class="sideNav_order_text">
+                    My order
+                </div>
+            </a>
+        </div>
+        <div class="sideNav_opt">
+
+            <header>
+                <span class="material-symbols-outlined">
+                    person
+                </span>
+                <div class="sideNav_order_text">
+                    Profile Settings
+                </div>
+            </header>
+            <a href="#">Profile Management</a>
+            <a href="#">Manage Address</a>
+            <a href="#">Pan Card Manage</a>
+            
+            <header>Paments</header>
+            <a href="#">Gift Cards</a>
+            <a href="#">Saved UPI</a>
+            <a href="#">Saved Cards</a>
+            
+            <header>Trandings</header>
+            <a href="#">Best Sells</a>
+            <a href="#">New Release</a>
+            <a href="#">Offers</a>
+
+            <header>Shop Category</header>
+            <a href="#">Mobile, Laptop, Computer</a>
+            <a href="#">Men fashion</a>
+            <a href="#">Women fashion</a>
+            <a href="#">Other</a>
+
+            <header>Helps & Terms</header>
+            <a href="#">Custemor Service</a>
+            <a href="#">Terms & Conditions</a>
+
+        </div>
+    </div>
+    <div class="navBody">
+        <div class="navEle dot3" onclick="opennav()">&#9776;</div>
+        <div class="navEle logo"><img class="logo_img" n alt=""></a></div>
+        <div class="navEle serchBar"><input type="text" class="serchBar-input" placeholder="  Serch For Product, Brand and More"></div>
+        <div class="navEle profile"><a href="" class="navBody-button profile-btn">Profile</a></div>
+        <div class="navEle cart"><a href="" class="navBody-button cart-btn">Cart</a></div>
+        <div class="navEle notifaction"><a href="" class="navBody-button notifaction-btn">notifaction</a></div>
+    </div>
+
+
+    <!-- by my old prog -->
+    <script>
+        function closenav(){
+            document.querySelector(".sideNav").style.left='-50%';
+            document.querySelector('.navBody').style.opacity="100%";
+
+        }
+        function opennav(){
+            console.log("clicked");
+            document.querySelector('.sideNav').style.left="0%";
+            document.querySelector('.navBody').style.opacity="50%";
+        }
+    </script>
+
+    <!-- by gpt -->
+    <!-- <script>
+        function closeNav() {
+            document.querySelector(".sideNav").style.width = "0";
+        }
+        
+        function openNav() {
+            document.querySelector('.sideNav').style.width = "250px";
+        }
+    
+        // Add event listener to the dot3 element to toggle the side navigation
+        document.querySelector('.dot3').addEventListener('click', function() {
+            var sideNavWidth = document.querySelector('.sideNav').style.width;
+            if (sideNavWidth === '250px') {
+                closeNav(); // Close the side navigation if it's open
+            } else {
+                openNav(); // Otherwise, open it
+            }
+        });
+    </script> -->
+    
+    <!-- <script>
+        
+        function closenav() {
+            document.querySelector(".sideNav").style.width="0";
+            // document.getElementById("sidenav").style.width="0";
+        }
+        function opennav(){
+            document.querySelector('.sideNav').style.width="250px";
+            // document.getElementById('sidenav').style.width="250px";
+        }
+    </script> -->
+</body>
+</html>

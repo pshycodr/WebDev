@@ -1,6 +1,5 @@
 function intersection(arr1, arr2) {
     const set1 = new Set(arr1);
-    console.log(set1);
     const common = [];
 
     for (const element of arr2) {
