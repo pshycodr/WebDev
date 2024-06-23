@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang='en' >
+<head>
+  <meta charset='UTF-8'>
+  <title>Horse Running [CSS Only] </title>
+  <link rel='stylesheet' href='./style.css'>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<input type='checkbox' id='toggle' >
+<label for='toggle'>
+<div class='floor'></div>
+
+<div class='🐴 animate'>
+<div class='front-leg right'>
+<div class='shoulder'>
+<div class='upper'>
+<div class='knee'>
+<div class='lower'>
+<div class='ankle'>
+<div class='foot'>
+<div class='hoof'></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='back-leg right'>
+<div class='top'>
+<div class='thigh'>
+<div class='lower-leg'>
+<div class='foot'>
+<div class='hoof'></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='tail'>
+<div class='nub'>
+<div class='section'>
+<div class='section'>
+<div class='section'>
+<div class='section'>
+<div class='section'>
+<div class='section last'>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='body'>
+<div class='section'>
+<div class='section'>
+<div class='section'>
+<div class='section'>
+<div class='section last'>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='back-side'></div>
+</div>
+
+<div class='neck'>
+<div class='under'></div>
+<div class='front'></div>
+<div class='base'></div>
+<div class='top'></div>
+<div class='shoulder'></div>
+</div>
+<div class='front-leg left'>
+<div class='shoulder'>
+<div class='upper'>
+<div class='knee'>
+<div class='lower'>
+<div class='ankle'>
+<div class='foot'>
+<div class='hoof'></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class='back-leg left'>
+<div class='top'>
+<div class='thigh'>
+<div class='lower-leg'>
+<div class='foot'>
+<div class='hoof'></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class='head'>
+<div class='skull'></div>
+<div class='nose'></div>
+<div class='face'></div>
+<div class='lip'></div>
+<div class='jaw'></div>
+<div class='chin'></div>
+<div class='ear'></div>
+<div class='eye'></div>
+</div>
+</div>
+
+<div class='dust front'>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+</div>
+<div class='dust back'>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+<div class='particle'></div>
+</div>
+
+
+</label>
+
+</body>
+</html>
+
+<style>
+@charset 'UTF-8';
+/*
+
+Click the horse for slow-mo :)
+
+*/
+:root {
+  font-size: 22vmin;
+  --outlines: transparent;
+  --speed: 0.8s;
+  --delay-gap: 8;
+  --horse-width: 3.8rem;
+  --horse-height: 2.5rem;
+  --color-horse: rgba(50, 50, 50, 1);
+  --color-horse-back: rgba(30, 30, 30, 1);
+  --color-hair: rgba(70, 70, 70, 1);
+  --color-hoof: rgba(0, 0, 0, 1);
+  --color-dust: #AF540B;
+  --color-floor: #F1D1AF;
+  --color-sky: #C4C4FF;
+}
+
+input[type=checkbox] {
+  opacity: 0;
+}
+
+input[type=checkbox]:checked ~ label {
+  --outlines: white;
+  --speed: 8s;
+  --color-horse: rgba(50, 50, 50, 0.3);
+  --color-horse-back: rgba(30, 30, 30, 0.3);
+  --color-hair: rgba(70, 70, 70, 0.3);
+  --color-hoof: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  position: relative;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(0deg, #ffa44e 30%, #00d4ff 100%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  cursor: pointer;
+}
+
+.dust {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: calc(((100vh - var(--horse-height)) / 2) + 0.02rem);
+  overflow: hidden;
+}
+
+.floor {
+  background-color: var(--color-floor);
+  background: linear-gradient(9deg, #e8d9be 0%, #A95108 100%);
+  position: fixed;
+  top: calc(50vh + (var(--horse-height) / 2) - 0.5rem);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.dust .particle {
+  background-color: var(--color-dust);
+  width: 0.05rem;
+  height: 0.05rem;
+  border-radius: 50%;
+  position: absolute;
+  border: 1px dashed var(--outlines);
+  top: calc(50vh + (var(--horse-height) / 2) - 0.05rem);
+  left: calc(50vw - (var(--horse-width) / 2) + (var(--horse-width) * 0.15));
+}
+
+.dust.back .particle {
+  left: calc(50vw - (var(--horse-width) / 2) + (var(--horse-width) * 0.5));
+}
+
+@-webkit-keyframes particle-animation-1 {
+  100% {
+    transform: translateX(calc(0.0790832504 * var(--horse-width) )) translateY(calc(-0.006786443 * (var(--horse-height) / 5))) scale(6) rotate(-130.5deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-1 {
+  100% {
+    transform: translateX(calc(0.0790832504 * var(--horse-width) )) translateY(calc(-0.006786443 * (var(--horse-height) / 5))) scale(6) rotate(-130.5deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(1) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-1 var(--speed) ease-out infinite;
+          animation: particle-animation-1 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.01s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.01s);
+}
+
+.dust.back .particle:nth-child(1) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.01s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.01s);
+}
+
+@-webkit-keyframes particle-animation-2 {
+  100% {
+    transform: translateX(calc(0.4588246208 * var(--horse-width) )) translateY(calc(-0.0085472607 * (var(--horse-height) / 5))) scale(5) rotate(-51deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-2 {
+  100% {
+    transform: translateX(calc(0.4588246208 * var(--horse-width) )) translateY(calc(-0.0085472607 * (var(--horse-height) / 5))) scale(5) rotate(-51deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(2) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-2 var(--speed) ease-out infinite;
+          animation: particle-animation-2 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.02s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.02s);
+}
+
+.dust.back .particle:nth-child(2) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.02s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.02s);
+}
+
+@-webkit-keyframes particle-animation-3 {
+  100% {
+    transform: translateX(calc(0.6072851817 * var(--horse-width) )) translateY(calc(-0.0042471818 * (var(--horse-height) / 5))) scale(4) rotate(-174.5deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-3 {
+  100% {
+    transform: translateX(calc(0.6072851817 * var(--horse-width) )) translateY(calc(-0.0042471818 * (var(--horse-height) / 5))) scale(4) rotate(-174.5deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(3) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-3 var(--speed) ease-out infinite;
+          animation: particle-animation-3 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.03s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.03s);
+}
+
+.dust.back .particle:nth-child(3) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.03s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.03s);
+}
+
+@-webkit-keyframes particle-animation-4 {
+  100% {
+    transform: translateX(calc(0.1106647242 * var(--horse-width) )) translateY(calc(-0.0015865086 * (var(--horse-height) / 5))) scale(4) rotate(-160.5deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-4 {
+  100% {
+    transform: translateX(calc(0.1106647242 * var(--horse-width) )) translateY(calc(-0.0015865086 * (var(--horse-height) / 5))) scale(4) rotate(-160.5deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(4) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-4 var(--speed) ease-out infinite;
+          animation: particle-animation-4 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.04s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.04s);
+}
+
+.dust.back .particle:nth-child(4) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.04s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.04s);
+}
+
+@-webkit-keyframes particle-animation-5 {
+  100% {
+    transform: translateX(calc(0.2071389586 * var(--horse-width) )) translateY(calc(-0.0062194575 * (var(--horse-height) / 5))) scale(3) rotate(-123deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-5 {
+  100% {
+    transform: translateX(calc(0.2071389586 * var(--horse-width) )) translateY(calc(-0.0062194575 * (var(--horse-height) / 5))) scale(3) rotate(-123deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(5) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-5 var(--speed) ease-out infinite;
+          animation: particle-animation-5 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.05s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.05s);
+}
+
+.dust.back .particle:nth-child(5) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.05s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.05s);
+}
+
+@-webkit-keyframes particle-animation-6 {
+  100% {
+    transform: translateX(calc(0.1582129258 * var(--horse-width) )) translateY(calc(-0.0004135397 * (var(--horse-height) / 5))) scale(4) rotate(-90.5deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-6 {
+  100% {
+    transform: translateX(calc(0.1582129258 * var(--horse-width) )) translateY(calc(-0.0004135397 * (var(--horse-height) / 5))) scale(4) rotate(-90.5deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(6) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-6 var(--speed) ease-out infinite;
+          animation: particle-animation-6 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.06s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.06s);
+}
+
+.dust.back .particle:nth-child(6) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.06s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.06s);
+}
+
+@-webkit-keyframes particle-animation-7 {
+  100% {
+    transform: translateX(calc(0.0817831481 * var(--horse-width) )) translateY(calc(-0.0073239705 * (var(--horse-height) / 5))) scale(5) rotate(-55deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-7 {
+  100% {
+    transform: translateX(calc(0.0817831481 * var(--horse-width) )) translateY(calc(-0.0073239705 * (var(--horse-height) / 5))) scale(5) rotate(-55deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(7) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-7 var(--speed) ease-out infinite;
+          animation: particle-animation-7 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.07s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.07s);
+}
+
+.dust.back .particle:nth-child(7) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.07s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.07s);
+}
+
+@-webkit-keyframes particle-animation-8 {
+  100% {
+    transform: translateX(calc(0.3009407192 * var(--horse-width) )) translateY(calc(-0.0089278586 * (var(--horse-height) / 5))) scale(6) rotate(-123.5deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-8 {
+  100% {
+    transform: translateX(calc(0.3009407192 * var(--horse-width) )) translateY(calc(-0.0089278586 * (var(--horse-height) / 5))) scale(6) rotate(-123.5deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(8) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-8 var(--speed) ease-out infinite;
+          animation: particle-animation-8 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.08s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.08s);
+}
+
+.dust.back .particle:nth-child(8) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.08s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.08s);
+}
+
+@-webkit-keyframes particle-animation-9 {
+  100% {
+    transform: translateX(calc(0.1140435274 * var(--horse-width) )) translateY(calc(-0.0002767461 * (var(--horse-height) / 5))) scale(3) rotate(-140.5deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-9 {
+  100% {
+    transform: translateX(calc(0.1140435274 * var(--horse-width) )) translateY(calc(-0.0002767461 * (var(--horse-height) / 5))) scale(3) rotate(-140.5deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(9) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-9 var(--speed) ease-out infinite;
+          animation: particle-animation-9 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.09s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.09s);
+}
+
+.dust.back .particle:nth-child(9) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.09s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.09s);
+}
+
+@-webkit-keyframes particle-animation-10 {
+  100% {
+    transform: translateX(calc(0.1883713939 * var(--horse-width) )) translateY(calc(-0.0044548555 * (var(--horse-height) / 5))) scale(5) rotate(-103deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-10 {
+  100% {
+    transform: translateX(calc(0.1883713939 * var(--horse-width) )) translateY(calc(-0.0044548555 * (var(--horse-height) / 5))) scale(5) rotate(-103deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(10) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-10 var(--speed) ease-out infinite;
+          animation: particle-animation-10 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.1s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.1s);
+}
+
+.dust.back .particle:nth-child(10) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.1s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.1s);
+}
+
+@-webkit-keyframes particle-animation-11 {
+  100% {
+    transform: translateX(calc(0.7055643723 * var(--horse-width) )) translateY(calc(-0.005728017 * (var(--horse-height) / 5))) scale(4) rotate(-18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-11 {
+  100% {
+    transform: translateX(calc(0.7055643723 * var(--horse-width) )) translateY(calc(-0.005728017 * (var(--horse-height) / 5))) scale(4) rotate(-18deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(11) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-11 var(--speed) ease-out infinite;
+          animation: particle-animation-11 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.11s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.11s);
+}
+
+.dust.back .particle:nth-child(11) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.11s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.11s);
+}
+
+@-webkit-keyframes particle-animation-12 {
+  100% {
+    transform: translateX(calc(0.2616537432 * var(--horse-width) )) translateY(calc(-0.0005038094 * (var(--horse-height) / 5))) scale(3) rotate(-159deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-12 {
+  100% {
+    transform: translateX(calc(0.2616537432 * var(--horse-width) )) translateY(calc(-0.0005038094 * (var(--horse-height) / 5))) scale(3) rotate(-159deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(12) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-12 var(--speed) ease-out infinite;
+          animation: particle-animation-12 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.12s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.12s);
+}
+
+.dust.back .particle:nth-child(12) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.12s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.12s);
+}
+
+@-webkit-keyframes particle-animation-13 {
+  100% {
+    transform: translateX(calc(0.4609069355 * var(--horse-width) )) translateY(calc(-0.0097632671 * (var(--horse-height) / 5))) scale(6) rotate(-141.5deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-13 {
+  100% {
+    transform: translateX(calc(0.4609069355 * var(--horse-width) )) translateY(calc(-0.0097632671 * (var(--horse-height) / 5))) scale(6) rotate(-141.5deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(13) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-13 var(--speed) ease-out infinite;
+          animation: particle-animation-13 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.13s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.13s);
+}
+
+.dust.back .particle:nth-child(13) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.13s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.13s);
+}
+
+@-webkit-keyframes particle-animation-14 {
+  100% {
+    transform: translateX(calc(0.1448120972 * var(--horse-width) )) translateY(calc(-0.0014523805 * (var(--horse-height) / 5))) scale(3) rotate(-146deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-14 {
+  100% {
+    transform: translateX(calc(0.1448120972 * var(--horse-width) )) translateY(calc(-0.0014523805 * (var(--horse-height) / 5))) scale(3) rotate(-146deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(14) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-14 var(--speed) ease-out infinite;
+          animation: particle-animation-14 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.14s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.14s);
+}
+
+.dust.back .particle:nth-child(14) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.14s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.14s);
+}
+
+@-webkit-keyframes particle-animation-15 {
+  100% {
+    transform: translateX(calc(0.1764400991 * var(--horse-width) )) translateY(calc(-0.0018617703 * (var(--horse-height) / 5))) scale(3) rotate(-84deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-animation-15 {
+  100% {
+    transform: translateX(calc(0.1764400991 * var(--horse-width) )) translateY(calc(-0.0018617703 * (var(--horse-height) / 5))) scale(3) rotate(-84deg);
+    opacity: 0;
+  }
+}
+.particle:nth-child(15) {
+  transform-origin: -20% -20%;
+  -webkit-animation: particle-animation-15 var(--speed) ease-out infinite;
+          animation: particle-animation-15 var(--speed) ease-out infinite;
+  -webkit-animation-delay: calc((var(--speed) * 0.1) + 0.15s);
+          animation-delay: calc((var(--speed) * 0.1) + 0.15s);
+}
+
+.dust.back .particle:nth-child(15) {
+  -webkit-animation-delay: calc((var(--speed) * 0.68) + 0.15s);
+          animation-delay: calc((var(--speed) * 0.68) + 0.15s);
+}
+
+@-webkit-keyframes particle-animation-16 {
+  100% {
+    transform: translateX(calc(0.1060509381 * var(--horse-width) )) translateY(calc(-0.0091654225 * (var(--horse-height) / 5))) scale(4) ro
