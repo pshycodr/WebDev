@@ -23,30 +23,6 @@ connectDB()
         throw err;
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 /* THIS APPROCH IS CORRECT BUT NOT SO GOOD ENOUGH
 
 import express from "express";

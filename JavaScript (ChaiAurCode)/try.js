@@ -18,17 +18,22 @@
 // }
 
 
-function* fibonacci() {
-    let prev = 0, curr = 1;
-    while (true) {
-        yield curr;
-        [prev, curr] = [curr, prev + curr];
-    }
-}
+// function* fibonacci() {
+//     let prev = 0, curr = 1;
+//     while (true) {
+//         yield curr;
+//         [prev, curr] = [curr, prev + curr];
+//     }
+// }
 
-const fibonacciGenerator = fibonacci();
+// const fibonacciGenerator = fibonacci();
 
-// Print the first 10 Fibonacci numbers
-for (let i = 0; i < 10; i++) {
-    console.log(fibonacciGenerator.next().value);
-}
+// // Print the first 10 Fibonacci numbers
+// for (let i = 0; i < 10; i++) {
+//     console.log(fibonacciGenerator.next().value);
+// }
+
+
+
+
+

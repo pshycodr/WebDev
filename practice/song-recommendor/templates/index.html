@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Recommender Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-music"></i> Song Recommender Chatbot</h1>
+        </header>
+        <main>
+            <form id="chat-form">
+                <label for="user-input">Enter a Song Name or Genre:</label>
+                <input type="text" id="user-input" name="user-input" placeholder="e.g., Pop, Rock, or a song name" required>
+                <button type="submit"><i class="fas fa-search"></i> Get Recommendations</button>
+            </form>
+            <div id="recommendations" class="recommendations"></div>
+            <div id="plot" class="plot"></div>
+        </main>
+        <footer>
+            <p>created by Anish Roy</p>
+        </footer>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#chat-form').on('submit', function(e) {
+                e.preventDefault();
+                var userInput = $('#user-input').val();
+                $.ajax({
+                    url: '/get_recommendations',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ user_input: userInput }),
+                    success: function(response) {
+                        if (response.error) {
+                            $('#recommendations').html('<p>' + response.error + '</p>');
+                            $('#plot').html('');
+                        } else {
+                            var recommendationsHtml = '<h2>Recommendations:</h2><div class="recommendation-list">';
+                            response.recommendations.forEach(function(rec) {
+                                recommendationsHtml += '<div class="recommendation-card">';
+                                if (rec.album_cover) {
+                                    recommendationsHtml += '<img src="' + rec.album_cover + '" alt="Album cover" class="album-cover">';
+                                }
+                                recommendationsHtml += '<div class="track-info">';
+                                recommendationsHtml += '<p><strong><a href="' + rec.external_url + '" target="_blank">' + rec.name + '</a></strong> by ' + rec.artist + '</p>';
+                                recommendationsHtml += '</div></div>';
+                            });
+                            recommendationsHtml += '</div>';
+                            $('#recommendations').html(recommendationsHtml);
+
+                            // var imgHtml = '<img src="data:image/png;base64,' + response.plot_url + '" class="plot-img"/>';
+                            // $('#plot').html(imgHtml);
+                        }
+                    },
+                    error: function() {
+                        $('#recommendations').html('<p>An error occurred while fetching recommendations. Please try again.</p>');
+                        $('#plot').html('');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
