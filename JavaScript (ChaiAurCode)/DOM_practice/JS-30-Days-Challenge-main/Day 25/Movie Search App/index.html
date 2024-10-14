@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>My Movie Search App</h1>
+        <!-- Input field for search queries -->
+        <input type="text" id="searchInput" placeholder="Search for movies...">
+        <!-- Button to trigger the search -->
+        <button id="searchButton">Search</button>
+        <!-- Container to display search results -->
+        <div id="movieResults"></div>
+    </div>
+    <!-- Modal structure -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <div id="modalDetails"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

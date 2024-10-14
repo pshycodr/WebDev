@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Social Media Dashboard</h1>
+            <nav>
+                <a href="index.html">Logout</a>
+            </nav>
+        </header>
+        <main class="main-content">
+            <section class="profile">
+                <h2>Profile</h2>
+                <form id="update-profile-form">
+                    <label for="new-username">Username:</label>
+                    <input type="text" id="new-username" placeholder="New Username" required>
+                    <label for="new-email">Email:</label>
+                    <input type="email" id="new-email" placeholder="New Email" required>
+                    <button type="submit">Update Profile</button>
+                </form>
+                <div class="profile-info">
+                    <p>Username: <span id="profile-username"></span></p>
+                    <p>Email: <span id="profile-email"></span></p>
+                </div>
+            </section>
+            <section class="posts-feed">
+                <h2>Create a Post</h2>
+                <form id="post-form">
+                    <textarea id="post-text" placeholder="Write your post here..." required></textarea>
+                    <input type="file" id="post-image" accept="image/*">
+                    <button type="submit">Post</button>
+                </form>
+
+                <div id="posts-feed">
+                    <!-- Posts will be dynamically added here -->
+                </div>
+            </section>
+            <section class="notifications">
+                <h2>Notifications</h2>
+                <ul id="notifications-list">
+                    <!-- Notifications will be dynamically added here -->
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

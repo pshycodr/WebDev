@@ -1,0 +1,26 @@
+.typeWriter-effect {
+    white-space: nowrap;
+    border-right: 1px solid;
+    display: inline-block;
+    overflow: hidden;
+    animation: typing 3s steps(20) forwards infinite, blink 1s step-end infinite;
+}
+
+.delay {
+    animation-delay: 3s; 
+}
+
+@keyframes typing {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }   
+}

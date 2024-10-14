@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media quary</title>
+
+    <style>
+        .container {
+            height: 500px;
+            width: 1000px;
+            background-color: antiquewhite;
+            border: 3px solid black ;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .box{
+            height: 100px;
+            width: 100px;
+            padding: 4px;
+            margin: 1px;
+            border: 1px solid black;
+        }
+
+        #box1{
+            background-color: aquamarine;
+        }
+
+        #box2{
+            background-color: brown;
+        }
+
+        #box3{
+            background-color: burlywood;
+        }
+
+        #box4{
+            background-color: blueviolet;
+        }
+    
+        @media (max-width:500px) {
+            .container {
+               flex-direction: column;
+                
+            }
+        }
+    </style>
+    
+  
+
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+</body>
+</html>

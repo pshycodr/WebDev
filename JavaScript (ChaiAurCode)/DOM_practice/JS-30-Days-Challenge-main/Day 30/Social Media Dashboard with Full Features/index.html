@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Notification</h2>
+            <ul id="notifications-list"></ul>
+        </aside>
+
+        <main class="main-content">
+            <section class="auth-forms">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <input type="text" id="login-username" placeholder="Username" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+
+                <h2>Register</h2>
+                <form id="register-form">
+                    <input type="text" id="register-username" placeholder="Username" required>
+                    <input type="email" id="register-email" placeholder="Email" required>
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </section>
+
+            <section id="profile">
+                <h2>User Profile</h2>
+                <img id="profile-pic" src="./img/default.jpg" alt="Profile Picture">
+                <p id="profile-username">Username: <span></span></p>
+                <p id="profile-email">Email: <span></span></p>
+                <form id="update-profile-form">
+                    <input type="text" id="new-username" placeholder="New Username">
+                    <input type="email" id="new-email" placeholder="New Email">
+                    <input type="file" id="profile-image">
+                    <button type="submit">Update Profile</button>
+                </form>
+            </section>
+
+            <section class="post-form">
+                <h2>Create a Post</h2>
+                <form id="post-form">
+                    <input type="text" id="post-text" placeholder="What's on your mind?" required>
+                    <input type="file" id="post-image">
+                    <button type="submit">Post</button>
+                </form>
+            </section>
+
+            <section id="posts-feed">
+                <!-- Posts will be displayed here -->
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

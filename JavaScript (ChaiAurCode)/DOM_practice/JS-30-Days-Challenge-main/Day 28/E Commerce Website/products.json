@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Wireless Headphones",
+        "price": 89.99,
+        "description": "High-quality wireless headphones with noise cancellation and 20-hour battery life.",
+        "image": "/img/wireless_headphones.jpg"
+    },
+    {
+        "name": "Smart Watch",
+        "price": 199.99,
+        "description": "Advanced smart watch with heart rate monitoring, GPS, and customizable watch faces.",
+        "image": "/img/smart_watch.jpg"
+    },
+    {
+        "name": "4K Ultra HD TV",
+        "price": 499.99,
+        "description": "55-inch 4K Ultra HD TV with smart features and high dynamic range (HDR) support.",
+        "image": "/img/4k_tv.jpg"
+    },
+    {
+        "name": "Bluetooth Speaker",
+        "price": 49.99,
+        "description": "Portable Bluetooth speaker with deep bass and up to 12 hours of playtime.",
+        "image": "/img/bluetooth_speaker.jpg"
+    },
+    {
+        "name": "Gaming Laptop",
+        "price": 1299.99,
+        "description": "High-performance gaming laptop with a powerful GPU, fast processor, and 16GB RAM.",
+        "image": "/img/gaming_laptop.jpg"
+    },
+    {
+        "name": "Digital Camera",
+        "price": 349.99,
+        "description": "Compact digital camera with a 20MP sensor and 10x optical zoom lens.",
+        "image": "/img/digital_camera.jpg"
+    },
+    {
+        "name": "Smartphone",
+        "price": 699.99,
+        "description": "Latest model smartphone with a large AMOLED display, 5G connectivity, and 128GB storage.",
+        "image": "/img/smartphone.jpg"
+    },
+    {
+        "name": "Electric Toothbrush",
+        "price": 39.99,
+        "description": "Rechargeable electric toothbrush with multiple brushing modes and a two-week battery life.",
+        "image": "/img/electric_toothbrush.jpg"
+    },
+    {
+        "name": "Fitness Tracker",
+        "price": 59.99,
+        "description": "Fitness tracker with step counting, sleep monitoring, and heart rate tracking features.",
+        "image": "/img/fitness_tracker.jpg"
+    },
+    {
+        "name": "Portable Charger",
+        "price": 29.99,
+        "description": "High-capacity portable charger with fast charging capabilities and multiple USB ports.",
+        "image": "/img/portable_charger.jpg"
+    }
+]

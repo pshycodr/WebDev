@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <section class="chat_section">
+      <div class="brand">
+        <img height="40" src="/chatterbox.png" alt="ChatterBox Image">
+        <h1>ChatterBox</h1>
+      </div>
+
+      <div class="message_area"></div>
+      <div>
+
+        <textarea  id="textarea" col="30" rows="1" placeholder="Write a message..."></textarea>
+      </div>
+    </section>
+    <script src="/socket.io/socket.io.js"></script>  <!--Client library will load here(Here socket server is coming from the node server which we have created)-->
+    <script src="/client.js"></script>
+  </body>
+</html>

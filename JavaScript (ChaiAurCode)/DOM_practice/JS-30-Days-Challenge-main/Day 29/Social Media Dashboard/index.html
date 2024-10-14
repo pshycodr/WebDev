@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Social Media Dashboard</h1>
+        </header>
+
+        <main>
+            <!-- Form for creating new posts -->
+             <section class="post-form">
+                <h2>Create a New Post</h2>
+                <form id="new-post-form">
+                    <textarea id="post-text" placeholder="What's on your mind?" required></textarea>
+                    <input type="file" id="post-image" accept="image/*">
+                    <button type="submit">Post</button>
+                </form>
+            </section>
+
+                <!-- Feed for displaying posts -->
+                 <section id="post-feed">
+                    <!-- Posts will be dynamically added here -->
+                 </section>
+
+                 <section>
+                    <h2>Login</h2>
+                    <form id="login-form">
+                        <input type="text" id="username" placeholder="Username" required>
+                        <input type="password" id="password" placeholder="Password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                </section>
+             
+        </main>
+
+        <footer>
+            <p>Social Media Dashboard &copy; 2024 by Aman Roy</p>
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

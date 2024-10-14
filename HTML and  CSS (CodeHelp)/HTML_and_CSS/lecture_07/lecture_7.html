@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lecture 7| TABLES</title>
+</head>
+
+<body>
+    <p><b>Example 1</b></p>
+    <table border="1">
+        <thead>
+            <th>Student Id.</th>
+            <th>Student Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+        </thead>
+        <tbody align="cen">
+            <tr>
+                <td>1234</td>
+                <td>Bill</td>
+                <td>Male</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>1234</td>
+                <td>Bill</td>
+                <td>Male</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>1234</td>
+                <td>Bill</td>
+                <td>Male</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>1234</td>
+                <td>Bill</td>
+                <td>Male</td>
+                <td>17</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+    <p><b>Example 2</b></p>
+    <table border="2">
+        <thead>
+            <th>coloum1</th>
+            <th>coloum2</th>
+            <th>coloum3</th>
+        </thead>
+
+        <tbody align="center">
+            <tr>
+                <td rowspan="2">row1 cell1</td>
+                <td>row1 cell2</td>
+                <td>row1 cell3</td>
+            </tr>
+            <tr>
+                <td>row2 cell1</td>
+                <td>row2 cell2</td>
+
+            </tr>
+            <tr>
+                <td colspan="3">row2 cell1</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <br><br>
+
+    <p><b>Example 3</b></p>
+
+    <table border="2">
+        <thead>
+            <th>No.</th>
+            <th>Full name</th>
+            <th>salary</th>
+            <th colspan="3">Type</th>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Bill Gates</td>
+                <td>$1000</td>
+                <td rowspan="3">Company founder</td>
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Bill Gates</td>
+                <td>$1000</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Bill Gates</td>
+                <td>$1000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+
+                <td colspan="2">Total Expence</td>
+                <td>$1000</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+    <br><br>
+
+    <p><b>Example 4</b></p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th rowspan="3">
+                    Day
+                </th>
+                <th colspan="3">
+                    Seminar
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">Schedule</th>
+                <th rowspan="2" colspan="2">Topic</th>
+            </tr>
+            <tr>
+                <th>Begin</th>
+                <th>End</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">Monday</td>
+                <td rowspan="2">8 am</td>
+                <td rowspan="2">5 pm</td>
+                <td>Intro to XML</td>
+            </tr>
+            <tr>
+                <td>Validity : DTD and Relax NG</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Tuesday</td>
+                <td>8 am</td>
+                <td>11 am</td>
+                <td rowspan="3">Xpath
+                    <hr>XSL Transformations
+                </td>
+            </tr>
+            <tr>
+                <td>11 am</td>
+                <td>2 pm</td>
+            </tr>
+            <tr>
+                <td>2 pm </td>
+                <td>5 pm</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>8 am</td>
+                <td>12 pm</td>
+                <td>XSL Formatting Objects</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

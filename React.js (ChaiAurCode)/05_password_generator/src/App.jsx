@@ -1,6 +1,4 @@
-import { useCallback, useEffect, useRef } from "react"
-import { useState } from "react"
-
+import { useCallback, useEffect, useRef, useState } from "react"
 
 function App() {
 
@@ -28,15 +26,15 @@ function App() {
   }, [length, numberAllowed, password, charAllowed])
 
   useEffect(() => {
-      passwordGenerator()
+    passwordGenerator()
   }, [length, charAllowed, numberAllowed, setPassword])
 
   const passwordRef = useRef(null)
 
   const copyPasswordToClipBoard = useCallback(() => {
-      passwordRef.current?.select()
-      window.navigator.clipboard.writeText(password)
-      alert("Password Copied!")
+    passwordRef.current?.select()
+    window.navigator.clipboard.writeText(password)
+    alert("Password Copied!")
   }, [password])
 
   return (
@@ -73,7 +71,7 @@ function App() {
                 className='cursor-pointer'
                 onChange={(e) => { setLength(e.target.value) }}
               />
-              <label>Length: {length}</label> 
+              <label>Length: {length}</label>
             </div>
             <div className="flex items-center gap-x-1">
               <input

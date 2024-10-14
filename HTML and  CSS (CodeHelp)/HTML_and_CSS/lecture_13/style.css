@@ -1,0 +1,52 @@
+.form{
+    background-color: #f6eee1;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.basic_info{
+    font-style: italic;
+    font-weight:bold;
+}
+
+.topics_interst{
+    font-style: italic;
+    font-weight: bold
+}
+
+fieldset{
+    width: 30%;
+    margin: 0 auto;
+    
+}
+.head{
+    text-align: center;
+    color: rgb(125, 90, 66);
+    font-style: bold;
+}
+  
+form {
+    text-align: center;
+
+  }
+  
+legend{
+    color:#4e8658;
+    font-size: larger;
+}
+
+.comment{
+    font-style: italic;
+    font-weight: bold;
+    color:#4e8658;
+    margin-right: 20%;
+    font-size: larger;
+}
+
+label{
+    font-size: 14px;
+}
+  
+.occupation{
+    margin-right: 32%;
+}

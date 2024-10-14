@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .typeWriter-effect{
+        white-space: nowrap;
+        border-right: 1px solid;
+        overflow: hidden;
+        animation: typing 8s steps(80) forwards infinite, blink 1s step-end infinite;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0%;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }   
+    }
+  </style>
+</head>
+<body>
+
+  <div class="typeWriter-effect">This is the typewriter effect in action!</div>
+
+</body>
+</html>

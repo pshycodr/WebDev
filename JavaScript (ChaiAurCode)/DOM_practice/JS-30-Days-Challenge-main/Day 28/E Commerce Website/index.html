@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My E-commerce Store</h1>
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#cart">Cart</a>
+            <a href="#checkout">Checkout</a>
+        </nav>
+    </header>
+    <main>
+        <section id="products">
+              <!-- Product listing will be dynamically added here -->
+        </section>
+        <section id="cart">
+               <!-- Cart section will be dynamically added here -->
+        </section>
+        <section id="checkout">
+                <!-- Checkout form will be dynamically added here -->
+                <h2>Checkout</h2>
+                <form class="checkout-form" onsubmit="handleCheckout(event)">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" required>
+                    <label for="payment">Payment Details:</label>
+                    <input type="text" id="payment" required>
+                    <button type="submit">Submit Order</button>
+                </form>
+            </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

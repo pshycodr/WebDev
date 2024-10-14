@@ -1,0 +1,28 @@
+ <!-- Day 20: LocalStorage And SessionStorage
+ Tasks/Activities:
+ Activity 1: Understanding LocalStorage
+ Task 1: Write a script to save a string value to localStorage and retrieve it. Log the retrieved value. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <h1>Understanding LocalStorage</h1>
+    <script>
+      // Save a string value to localStorage
+      const key = "myStringKey";
+      const value = "Hello, localStorage!";
+      localStorage.setItem(key, value);
+
+      // Retrieve the string value from localStorage
+      const retrievedValue = localStorage.getItem(key);
+
+      console.log("Retrieved value:", retrievedValue);
+    </script>
+  </body>
+</html>
