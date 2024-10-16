@@ -20,7 +20,7 @@ function Github() {
 
   if (error) {
     return <div className="text-red-500 text-center mt-10">{error}</div>;
-  }
+  } 
 
   return (
     <div className="flex justify-center items-center m-10">
